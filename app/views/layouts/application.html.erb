@@ -16,17 +16,19 @@
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
 </head>
+
 <body class="wrapper">
+
 <div>
-        <ul class="nav justify-content-end" style=" background-color: #668";>
+        <ul class="nav justify-content-end" style=" background-color: #FFC357";>
             
             <% if user_signed_in? %>
             <li class="nav-item">
-                <a class="nav-link active login"  href="/users/sign_out" style="color:black" fonts-size:"3px"> <i class="fa fa-sign-in" aria-hidden="true"></i> logout</a>  
+                <a class="nav-link active login"  href="/users/sign_out" style="color:white"   fonts-size:"3px" > <i class="fa fa-sign-in" aria-hidden="true"></i> logout</a>  
             </li>
               <% else %>
-                <a class="nav-link active login" href="/users/sign_in" style="color:black" fonts-size:"3px"> <i class="fa fa-sign-out" aria-hidden="true"></i> login</a>  
-                <a class="nav-link active login" href="/users/sign_up" style="color:black" fonts-size:"3px"> <i class="fa fa-users" aria-hidden="true"></i> sign</a>  
+                <a class="nav-link active login" href="/users/sign_in" style="color:white"     fonts-size:"3px"> <i class="fa fa-sign-out" aria-hidden="true"></i> login</a>  
+                <a class="nav-link active login" href="/users/sign_up" style="color:white "   fonts-size:"3px"> <i class="fa fa-users" aria-hidden="true"></i> sign</a>  
             <% end %>
         </ul>
 </div>
@@ -44,11 +46,15 @@
 <%= yield %>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <footer>
-      <p><br>@copyright <strong>LIKELION AT HANSUNG</strong></p>
+
+<footer>
+    <div>
+      <p>@copyright <strong>LIKELION AT HANSUNG</strong></p>
+
       <p>8.18 hackathon</p>
+    </div>
     </footer>
-   
+
 </body>
   
 
