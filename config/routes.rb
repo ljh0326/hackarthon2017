@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'planner' => 'home#planner'
   get 'myPage' => 'home#myPage'
   get 'share' => 'home#share'
+  get 'new_share' => 'home#new_share'
+  
+  post 'create' => 'home#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
