@@ -1,16 +1,12 @@
-footer{
-    text-align :center;
-    padding: 20px 20px;
-    background-color:#186;
-}
+
 .title{
         text-align :center;
 }
 .video-container
 {
-    position:relative;
     padding-bottom:500px;
-  
+    margin-top:5%;
+    margin-left:5%;
     height:0;
     overflow:hidden;
     
@@ -25,7 +21,6 @@ body {
   background-color: #eee;
   color: #666;
   overflow-x: hidden;
-  height:1500px; /* Just for the sake of this tutorial */
 }
 .content {
   padding: 10px 10px;
@@ -40,8 +35,6 @@ body {
 .wrapper {
   position: relative;
   left: 0;
-    
-
 }
 #menu {
   position: fixed;
@@ -50,7 +43,7 @@ body {
   top: 0;
   left: -240px;
   z-index: 1000;
-  background-color: #186;
+  background-color: #FFE8A5;
   overflow: auto;
 }
 #menu,
@@ -72,7 +65,7 @@ body {
   cursor: default;
 }
 #menu ul li:first-child {
-  background-color: #668;
+  background-color: #FFC357;
 }
 #menu ul li {
   padding: 15px 0 15px 15px;
@@ -81,7 +74,7 @@ body {
   border-width: 0 0 .5px 0;
 }
 #menu ul li:hover {
-  background-color: #668;
+  background-color: #FFC357;
 }
 #menu ul li a {
   text-decoration: none;
@@ -97,7 +90,7 @@ body {
 	left: 240px;
 }
 .menu-btn {
-  color: #186;
+  color: #FFC357;
   border: none;
   position: fixed;
   padding: 30px;

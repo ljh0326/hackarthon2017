@@ -11,24 +11,23 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 </head>
-<body class="wrapper">
-  
+<body>
 <div>
-        <ul class="nav justify-content-end" style=" background-color: #668";>
+        <ul class="nav justify-content-end" style=" background-color: #FFC357";>
             
             <% if user_signed_in? %>
             <li class="nav-item">
-                <a class="nav-link active login"  href="/users/sign_out" style="color:black" fonts-size:"3px"> <i class="fa fa-sign-in" aria-hidden="true"></i> logout</a>  
+                <a class="nav-link active login"  href="/users/sign_out" style="color:white"   fonts-size:"3px" > <i class="fa fa-sign-in" aria-hidden="true"></i> logout</a>  
             </li>
               <% else %>
-                <a class="nav-link active login" href="/users/sign_in" style="color:black" fonts-size:"3px"> <i class="fa fa-sign-out" aria-hidden="true"></i> login</a>  
-                <a class="nav-link active login" href="/users/sign_up" style="color:black" fonts-size:"3px"> <i class="fa fa-users" aria-hidden="true"></i> sign</a>  
+                <a class="nav-link active login" href="/users/sign_in" style="color:white"     fonts-size:"3px"> <i class="fa fa-sign-out" aria-hidden="true"></i> login</a>  
+                <a class="nav-link active login" href="/users/sign_up" style="color:white "   fonts-size:"3px"> <i class="fa fa-users" aria-hidden="true"></i> sign</a>  
             <% end %>
         </ul>
 </div>
 <nav id="menu">
     <ul>
-      <li><h1><i class="fa fa-list"></i> Menu</h1></li>
+      <li><a href="/"><h1><i class="fa fa-list"></i> Menu</h1></a></li>
       <li><a href="/"><i class="fa fa-check"></i> Home</a></li>
       <li><a href="/planner"><i class="fa fa-check"></i> Planner</a></li>
       <li><a href="/myPage"><i class="fa fa-check"></i> My Page</a></li>
@@ -36,24 +35,18 @@
     </ul>
   </nav>
 <button href="#" class="menu-btn"><i class="fa fa-bars fa-3x"></i></button>
-  <h1 class = "title" id="invisibleShow">asdfgfgf</h1>  
+    
 <%= yield %>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-</button>
-   
-      
-  </nav>
-   <div>
-    <footer>
+<footer>
+    <div>
       <p>@copyright <strong>LIKELION AT HANSUNG</strong></p>
       <p>8.18 hackathon</p>
+    </div>
     </footer>
-  </div>
 </body>
+  
 
 
 <script>
