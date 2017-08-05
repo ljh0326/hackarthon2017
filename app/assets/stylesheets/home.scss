@@ -5,6 +5,7 @@
 .video-container
 {
     padding-bottom:500px;
+
     margin-top:5%;
     margin-left:5%;
     height:0;
@@ -48,12 +49,12 @@ body {
 }
 #menu,
 .wrapper {
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-	padding-bottom:800px;
+   -webkit-transition: all 0.3s ease;
+   -moz-transition: all 0.3s ease;
+   transition: all 0.3s ease;
+   padding-bottom:800px;
   overflow: hidden;
-	
+   
 }
 #menu ul {
   list-style: outside none none;
@@ -84,10 +85,10 @@ body {
   font-size: 1.5em;
 }
 #menu.menu-open {
-	left: 0px;
+   left: 0px;
 }
 .menu-push {
-	left: 240px;
+   left: 240px;
 }
 .menu-btn {
   color: #FFC357;
