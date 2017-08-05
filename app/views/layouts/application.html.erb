@@ -9,10 +9,14 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
 </head>
 <body class="wrapper">
-  
 <div>
         <ul class="nav justify-content-end" style=" background-color: #668";>
             
@@ -28,7 +32,7 @@
 </div>
 <nav id="menu">
     <ul>
-      <li><h1><i class="fa fa-list"></i> Menu</h1></li>
+      <li><a href="/"><h1><i class="fa fa-list"></i> Menu</h1></a></li>
       <li><a href="/"><i class="fa fa-check"></i> Home</a></li>
       <li><a href="/planner"><i class="fa fa-check"></i> Planner</a></li>
       <li><a href="/myPage"><i class="fa fa-check"></i> My Page</a></li>
@@ -36,24 +40,17 @@
     </ul>
   </nav>
 <button href="#" class="menu-btn"><i class="fa fa-bars fa-3x"></i></button>
-  <h1 class = "title" id="invisibleShow">asdfgfgf</h1>  
+    
 <%= yield %>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-</button>
-   
-      
-  </nav>
-   <div>
     <footer>
-      <p>@copyright <strong>LIKELION AT HANSUNG</strong></p>
+      <p><br>@copyright <strong>LIKELION AT HANSUNG</strong></p>
       <p>8.18 hackathon</p>
     </footer>
-  </div>
+   
 </body>
+  
 
 
 <script>
@@ -81,4 +78,3 @@ $(function() {
 });
 </script>
 </html>
-
