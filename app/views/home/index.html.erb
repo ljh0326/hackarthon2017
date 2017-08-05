@@ -1,0 +1,59 @@
+ <container>
+  
+<body class="wrapper">
+  <nav id="menu">
+    <ul>
+      <li><h1><i class="fa fa-list"></i> Menu</h1></li>
+      <li><a href="/"><i class="fa fa-check"></i> Home</a></li>
+      <li><a href="#paragraph2"><i class="fa fa-check"></i> Planner</a></li>
+      <li><a href="#paragraph3"><i class="fa fa-check"></i> My Page</a></li>
+      <li><a href="#paragraph4"><i class="fa fa-check"></i> Share</a></li>
+    </ul>
+  </nav>
+  <button href="#" class="menu-btn"><i class="fa fa-bars fa-3x"></i></button>
+  <h1 class = "title" id="invisibleShow">asdfgfgf</h1>
+  
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  
+   <link type ="text/css" href="c.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+            <link rel="stylesheet" href="main.css">
+                <div class ="video-container">
+                    <p align="middle">
+            <iframe width="800" height="480"
+            src="https://www.youtube.com/embed/FMB97wFb3x0?&amp;autoplay=1&amp;loop=1" frameborder="0" ></iframe>
+                      </p>
+                 </div>
+     
+            </body>
+
+</container>
+
+<script>
+
+  $("button,a").click(function(){
+  $("body").toggleClass("menu-push");
+  $("nav").toggleClass("menu-open");
+}); 
+
+// Slow Scroll
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+      $('html,body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+      }
+    }
+  });
+});
+</script>
