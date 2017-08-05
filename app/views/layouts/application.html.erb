@@ -4,11 +4,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
+</head>
+<body class="wrapper">
+  
 <div>
         <ul class="nav justify-content-end" style=" background-color: #668";>
             
@@ -21,24 +25,60 @@
                 <a class="nav-link active login" href="/users/sign_up" style="color:black" fonts-size:"3px"> <i class="fa fa-users" aria-hidden="true"></i> sign</a>  
             <% end %>
         </ul>
-    </div>
-</head>
-<body>
+</div>
+<nav id="menu">
+    <ul>
+      <li><h1><i class="fa fa-list"></i> Menu</h1></li>
+      <li><a href="/"><i class="fa fa-check"></i> Home</a></li>
+      <li><a href="/planner"><i class="fa fa-check"></i> Planner</a></li>
+      <li><a href="/myPage"><i class="fa fa-check"></i> My Page</a></li>
+      <li><a href="/share"><i class="fa fa-check"></i> Share</a></li>
+    </ul>
+  </nav>
+<button href="#" class="menu-btn"><i class="fa fa-bars fa-3x"></i></button>
+  <h1 class = "title" id="invisibleShow">asdfgfgf</h1>  
 <%= yield %>
+
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+</button>
    
       
   </nav>
- 
-
-</body>
-</html>
-
+   <div>
     <footer>
       <p>@copyright <strong>LIKELION AT HANSUNG</strong></p>
       <p>8.18 hackathon</p>
     </footer>
+  </div>
+</body>
+
+
+<script>
+
+  $("button,a").click(function(){
+  $("body").toggleClass("menu-push");
+  $("nav").toggleClass("menu-open");
+}); 
+
+// Slow Scroll
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+      $('html,body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+      }
+    }
+  });
+});
+</script>
+</html>
+
