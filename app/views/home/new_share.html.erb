@@ -1,12 +1,149 @@
-<form action="/create" method="post">
-    <div class="form-group">
-        <input type="text" name="title">
+<div class="container">
+    <div class="map_wrap">
+        <div id="drawingMap"></div>
+        <p class="modes">
+            <!--<button onClick="selectOverlay('RECTANGLE')">범위설정</button>-->
+            <button onClick="startPos()">출발지선택</button>
+            <button onClick="destinationPos()">목적지선택</button>
+            <button onClick="endPos()">목적지선택끔</button>
+            <button onClick="search()">검색</button>
+        </p>
     </div>
     
-    <div class="form-group">
-        <label>내용 입력</label>
-        <textarea class="form-control" name="content" rows="3"></textarea>
-   </div>
-   
-   <button type="submit" class="btn btn-primary">등록</button>
-</form>
+    <form action="/create" method="post">
+        <div class="form-group">
+            <input type="text" name="title">
+        </div>
+        
+        <div class="form-group">
+            <textarea class="form-control" name="content" rows="3"></textarea>
+       </div>
+       
+       <button type="submit" class="btn btn-primary">등록</button>
+    </form>
+    
+</div>
+
+
+<script>
+      var drawingMapContainer = document.getElementById('drawingMap');
+	var mapOptions = {
+		center: new daum.maps.LatLng(33.450701, 126.570667),
+		level: 3
+	};
+
+	var drawingMap = new daum.maps.Map(drawingMapContainer, mapOptions);
+	
+// 	var drawingOptions = { // Drawing Manager를 생성할 때 사용할 옵션입니다
+//         map: drawingMap, // Drawing Manager로 그리기 요소를 그릴 map 객체입니다
+//         drawingMode: [ // Drawing Manager로 제공할 그리기 요소 모드입니다
+//             daum.maps.Drawing.OverlayType.MARKER,
+//             daum.maps.Drawing.OverlayType.RECTANGLE
+//         ],
+//         // 사용자에게 제공할 그리기 가이드 툴팁입니다
+//         // 사용자에게 도형을 그릴때, 드래그할때, 수정할때 가이드 툴팁을 표시하도록 설정합니다
+//         guideTooltip: ['draw', 'drag', 'edit'], 
+//         markerOptions: { // 마커 옵션입니다 
+//             draggable: false, // 마커를 그리고 나서 드래그 가능하게 합니다 
+//             removable: true // 마커를 삭제 할 수 있도록 x 버튼이 표시됩니다  
+//         },
+//         rectangleOptions: {
+//             draggable: false,
+//             removable: true,
+//             editable: true,
+//             strokeColor: '#39f', // 외곽선 색
+//             fillColor: '#39f', // 채우기 색
+//             fillOpacity: 0.5 // 채우기색 투명도
+//         }
+//     };
+    
+//     var manager = new daum.maps.Drawing.DrawingManager(drawingOptions);
+        
+//         // 버튼 클릭 시 호출되는 핸들러 입니다
+//     function selectOverlay(type) {
+
+//         // 그리기 중이면 그리기를 취소합니다
+//         manager.cancel();
+    
+//         // 클릭한 그리기 요소 타입을 선택합니다
+//         manager.select(daum.maps.Drawing.OverlayType[type]);
+//     }
+    
+    var startMarker = 0;
+    var startPos;
+    var destinMarker = 0;
+    var destinMarekers = [];
+    var destinPois= [];
+    function startPos() {
+        startMarker = 1;
+    }
+    daum.maps.event.addListener(drawingMap, 'click', function(mouseEvent) {        
+         // 클릭한 위치에 마커를 표시합니다 
+        if(startMarker == 1) addMarker(mouseEvent.latLng);   
+        if(destinMarker == 1) addMarkers(mouseEvent.latLng);
+        
+    });
+    
+    // 마커 이미지의 이미지 주소입니다
+    var markerSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+    var imageSize = new daum.maps.Size(24, 35); 
+    var markerImage = new daum.maps.MarkerImage(markerSrc, imageSize);
+    function addMarker(position) {
+
+        // 마커를 생성합니다
+        var marker = new daum.maps.Marker({
+            position: position,
+            image : markerImage // 마커 이미지 
+        });
+    
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(drawingMap);
+        startPos = position;
+        startMarker = 0;
+    }
+    
+    function addMarkers(position) {
+        // 마커를 생성합니다
+        var marker = new daum.maps.Marker({
+            position: position
+        });
+    
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(drawingMap);
+        
+        // 생성된 마커를 배열에 추가합니다
+        destinMarekers.push(marker);
+        destinPois.push(position);
+    }
+
+    
+    function destinationPos() {
+        destinMarker = 1;
+    }
+    
+    
+    function endPos() {
+        destinMarker = 0;
+        
+        
+    }
+    function search() {
+        alert("search");
+    }
+    function minMax() {
+        minX = startPos.getLat();
+        maxX = startPos.getLat();
+        minY = startPos.getLng();
+        maxY = startPos.getLng();
+        
+        for(var i=0; i<destinPois.length; i++){
+            if(minX > destinPois[i].getLat()) minX = destinPois[i].getLat();
+            if(maxX < destinPois[i].getLat()) maxX = destinPois[i].getLat();
+            
+            if(minY > destinPois[i].getLng()) minY = destinPois[i].getLng();
+            if(maxY < destinPois[i].getLng()) maxY = destinPois[i].getLng();
+        }
+        
+        
+    }
+</script>

@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :content
       t.string :hit
       t.string :user_id
-      
+
       t.timestamps null: false
     end
   end
